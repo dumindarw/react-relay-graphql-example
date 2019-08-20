@@ -3,15 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "graphql-relay": "^0.6.0",
+    "http-proxy-middleware": "^0.19.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-scripts": "3.1.1"
+    "react-relay": "^5.0.0",
+    "react-scripts": "3.1.1",
+    "relay-runtime": "^5.0.0",
+    "styled-components": "^4.3.2",
+    "styled-system": "^5.1.0",
+    "unstated": "^2.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "relay": "relay-compiler --src ./src/ --schema ./data/schema.graphql",
+    "update-schema": "babel-node ./scripts/updateSchema.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -27,5 +36,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-flow": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-plugin-relay": "^5.0.0",
+    "core-js": "^2.6.9",
+    "graphql": "^14.4.2",
+    "relay-compiler": "^5.0.0"
   }
 }

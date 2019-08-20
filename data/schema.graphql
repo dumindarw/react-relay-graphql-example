@@ -1,0 +1,51 @@
+
+type currentaddr {
+    district: String,
+    dsdivision: String
+}
+  
+input currentaddrInput  {
+    district: String!,
+    dsdivision: String!
+}
+
+input locationInput {
+    type: String!,
+    coordinates:  [Float!]
+}
+
+type location{
+    type: String,
+    coordinates:  [Float]
+}
+
+type saveSuccessResponse {
+    acknowledged: String,
+    insertedId: ID
+}
+
+type userProfile {
+    id: ID,
+    username: String,
+    firstname: String,
+    lastname: String,
+    password: String,
+    nic: String,
+    deviceid: String,
+    email: String,
+    tp: Int,
+    location: location,
+    currentaddr: currentaddr,
+    verified: Boolean,
+    blackListed: Boolean
+}
+
+
+type Query {
+  appQuery(username: String!): userProfile
+  """Fetches an object given its name"""
+  GET_USER(
+    """The ID of an object"""
+    username: String!
+  ): userProfile
+}
